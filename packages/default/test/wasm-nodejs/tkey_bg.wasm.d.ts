@@ -1,13 +1,15 @@
 /* tslint:disable */
 /* eslint-disable */
 export const memory: WebAssembly.Memory;
-export function service_provider(a: number, b: number, c: number, d: number, e: number, f: number): void;
-export function service_provider_free(a: number): void;
+export function test_function_pass(a: number, b: number, c: number): void;
+export function test_function_fail(a: number, b: number, c: number): void;
 export function __wbg_point_free(a: number): void;
 export function run(a: number, b: number): number;
 export function generate_private_key(a: number, b: number, c: number): void;
 export function storage_layer(a: number, b: number, c: number, d: number): number;
 export function storage_layer_free(a: number): void;
+export function service_provider(a: number, b: number, c: number, d: number, e: number, f: number): void;
+export function service_provider_free(a: number): void;
 export function threshold_key(a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number): void;
 export function threshold_key_free(a: number): void;
 export function threshold_key_initialize(a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number): void;

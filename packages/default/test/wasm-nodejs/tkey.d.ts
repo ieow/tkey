@@ -1,16 +1,15 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
-* @param {boolean} enable_logging
-* @param {string} postbox_key
-* @param {string} curve_n
-* @returns {number}
+* @param {string} json_string
+* @returns {string}
 */
-export function service_provider(enable_logging: boolean, postbox_key: string, curve_n: string): number;
+export function test_function_pass(json_string: string): string;
 /**
-* @param {number} ptr
+* @param {string} json_string
+* @returns {string}
 */
-export function service_provider_free(ptr: number): void;
+export function test_function_fail(json_string: string): string;
 /**
 * @param {string} repo
 * @returns {Promise<any>}
@@ -32,6 +31,17 @@ export function storage_layer(enable_logging: boolean, host_url: string, server_
 * @param {number} ptr
 */
 export function storage_layer_free(ptr: number): void;
+/**
+* @param {boolean} enable_logging
+* @param {string} postbox_key
+* @param {string} curve_n
+* @returns {number}
+*/
+export function service_provider(enable_logging: boolean, postbox_key: string, curve_n: string): number;
+/**
+* @param {number} ptr
+*/
+export function service_provider_free(ptr: number): void;
 /**
 * @param {number} metadata
 * @param {number} shares

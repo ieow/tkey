@@ -1,4 +1,3 @@
-/* eslint-disable */
 let imports = {};
 imports['__wbindgen_placeholder__'] = module.exports;
 let wasm;
@@ -212,36 +211,57 @@ function __wbg_adapter_24(arg0, arg1, arg2) {
 }
 
 /**
-* @param {boolean} enable_logging
-* @param {string} postbox_key
-* @param {string} curve_n
-* @returns {number}
+* @param {string} json_string
+* @returns {string}
 */
-module.exports.service_provider = function(enable_logging, postbox_key, curve_n) {
+module.exports.test_function_pass = function(json_string) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        const ptr0 = passStringToWasm0(postbox_key, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const ptr0 = passStringToWasm0(json_string, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
-        const ptr1 = passStringToWasm0(curve_n, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len1 = WASM_VECTOR_LEN;
-        wasm.service_provider(retptr, enable_logging, ptr0, len0, ptr1, len1);
+        wasm.test_function_pass(retptr, ptr0, len0);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         var r2 = getInt32Memory0()[retptr / 4 + 2];
-        if (r2) {
-            throw takeObject(r1);
+        var r3 = getInt32Memory0()[retptr / 4 + 3];
+        var ptr1 = r0;
+        var len1 = r1;
+        if (r3) {
+            ptr1 = 0; len1 = 0;
+            throw takeObject(r2);
         }
-        return r0;
+        return getStringFromWasm0(ptr1, len1);
     } finally {
         wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(ptr1, len1);
     }
 };
 
 /**
-* @param {number} ptr
+* @param {string} json_string
+* @returns {string}
 */
-module.exports.service_provider_free = function(ptr) {
-    wasm.service_provider_free(ptr);
+module.exports.test_function_fail = function(json_string) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        const ptr0 = passStringToWasm0(json_string, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.test_function_fail(retptr, ptr0, len0);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        var r2 = getInt32Memory0()[retptr / 4 + 2];
+        var r3 = getInt32Memory0()[retptr / 4 + 3];
+        var ptr1 = r0;
+        var len1 = r1;
+        if (r3) {
+            ptr1 = 0; len1 = 0;
+            throw takeObject(r2);
+        }
+        return getStringFromWasm0(ptr1, len1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(ptr1, len1);
+    }
 };
 
 /**
@@ -300,6 +320,39 @@ module.exports.storage_layer = function(enable_logging, host_url, server_time_of
 */
 module.exports.storage_layer_free = function(ptr) {
     wasm.storage_layer_free(ptr);
+};
+
+/**
+* @param {boolean} enable_logging
+* @param {string} postbox_key
+* @param {string} curve_n
+* @returns {number}
+*/
+module.exports.service_provider = function(enable_logging, postbox_key, curve_n) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        const ptr0 = passStringToWasm0(postbox_key, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passStringToWasm0(curve_n, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len1 = WASM_VECTOR_LEN;
+        wasm.service_provider(retptr, enable_logging, ptr0, len0, ptr1, len1);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        var r2 = getInt32Memory0()[retptr / 4 + 2];
+        if (r2) {
+            throw takeObject(r1);
+        }
+        return r0;
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+    }
+};
+
+/**
+* @param {number} ptr
+*/
+module.exports.service_provider_free = function(ptr) {
+    wasm.service_provider_free(ptr);
 };
 
 /**
@@ -562,7 +615,7 @@ function handleError(f, args) {
 function getArrayU8FromWasm0(ptr, len) {
     return getUint8Memory0().subarray(ptr / 1, ptr / 1 + len);
 }
-function __wbg_adapter_96(arg0, arg1, arg2, arg3) {
+function __wbg_adapter_98(arg0, arg1, arg2, arg3) {
     wasm.wasm_bindgen__convert__closures__invoke2_mut__h332715b9aebd7476(arg0, arg1, addHeapObject(arg2), addHeapObject(arg3));
 }
 
@@ -800,7 +853,7 @@ module.exports.__wbg_new_9962f939219f1820 = function(arg0, arg1) {
             const a = state0.a;
             state0.a = 0;
             try {
-                return __wbg_adapter_96(a, state0.b, arg0, arg1);
+                return __wbg_adapter_98(a, state0.b, arg0, arg1);
             } finally {
                 state0.a = a;
             }
@@ -883,8 +936,8 @@ module.exports.__wbindgen_memory = function() {
     return addHeapObject(ret);
 };
 
-module.exports.__wbindgen_closure_wrapper719 = function(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 124, __wbg_adapter_24);
+module.exports.__wbindgen_closure_wrapper725 = function(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 127, __wbg_adapter_24);
     return addHeapObject(ret);
 };
 
