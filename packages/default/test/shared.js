@@ -18,6 +18,8 @@ import { keccak256 } from "web3-utils";
 
 import ThresholdKey from "../src/index";
 import { getMetadataUrl, getServiceProvider, initStorageLayer, isMocked } from "./helpers";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { greet } from "./wasm-nodejs/tkey";
 
 const rejects = async (fn, error, msg) => {
   let f = () => {};
@@ -67,6 +69,9 @@ export const sharedTestCases = (mode, torusSP, storageLayer) => {
     let tb;
     beforeEach("Setup ThresholdKey", async function () {
       tb = new ThresholdKey({ serviceProvider: customSP, storageLayer: customSL, manualSync: mode });
+
+      // eslint-disable-next-line no-console
+      console.log(greet("test"));
     });
     it("#should be able to initializeNewKey using initialize and reconstruct it", async function () {
       const sp = customSP;
@@ -79,6 +84,9 @@ export const sharedTestCases = (mode, torusSP, storageLayer) => {
       if (tb2.privKey.cmp(reconstructedKey.privKey) !== 0) {
         fail("key should be able to be reconstructed");
       }
+
+      // eslint-disable-next-line no-console
+      console.log(greet("pass json as string to rust thru wasm, and run the test function in rust"));
     });
     it(`#should be able to reconstruct key when initializing a key, manualSync=${mode}`, async function () {
       const resp1 = await tb._initializeNewKey({ initializeModules: true });

@@ -1,0 +1,33 @@
+/* tslint:disable */
+/* eslint-disable */
+export const memory: WebAssembly.Memory;
+export function service_provider(a: number, b: number, c: number, d: number, e: number, f: number): void;
+export function service_provider_free(a: number): void;
+export function __wbg_point_free(a: number): void;
+export function run(a: number, b: number): number;
+export function generate_private_key(a: number, b: number, c: number): void;
+export function storage_layer(a: number, b: number, c: number, d: number): number;
+export function storage_layer_free(a: number): void;
+export function threshold_key(a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number): void;
+export function threshold_key_free(a: number): void;
+export function threshold_key_initialize(a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number): void;
+export function threshold_key_reconstruct(a: number, b: number, c: number, d: number): void;
+export function test_ptr(a: number): number;
+export function null_ptr(): number;
+export function greet(a: number, b: number, c: number): void;
+export function new_point(a: number, b: number, c: number, d: number): number;
+export function from_point(a: number, b: number): void;
+export function point_from_decode(a: number, b: number): number;
+export function compress_pubkey(a: number, b: number): void;
+export function new_metadata(a: number, b: number): void;
+export function new_mut_metadata(a: number): number;
+export function metadata_free(a: number): void;
+export function metadata_get_pubkey(a: number, b: number): void;
+export function __wbindgen_malloc(a: number): number;
+export function __wbindgen_realloc(a: number, b: number, c: number): number;
+export const __wbindgen_export_2: WebAssembly.Table;
+export function _dyn_core__ops__function__FnMut__A____Output___R_as_wasm_bindgen__closure__WasmClosure___describe__invoke__h95466f96f230265b(a: number, b: number, c: number): void;
+export function __wbindgen_add_to_stack_pointer(a: number): number;
+export function __wbindgen_free(a: number, b: number): void;
+export function __wbindgen_exn_store(a: number): void;
+export function wasm_bindgen__convert__closures__invoke2_mut__h332715b9aebd7476(a: number, b: number, c: number, d: number): void;
